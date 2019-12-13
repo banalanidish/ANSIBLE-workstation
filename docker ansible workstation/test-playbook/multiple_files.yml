@@ -1,0 +1,15 @@
+
+
+#WRITE PROGRAM TO install multiple packages  USING "with_items" concept
+
+---
+ - hosts: 174.129.99.1
+   user: root
+   tasks:
+   - name: multiple packages install^n
+     package: name="{{ item }}" state=installed
+     with_items:
+      - 'httpd'
+      - 'vsftpd'
+      - 'git'
+      - 'subversion'

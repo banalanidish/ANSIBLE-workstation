@@ -1,0 +1,17 @@
+---
+ - hosts: 54.226.142.52
+   user: root
+   vars:
+    file_create:
+    # - file21
+    # - file08
+     - file1991
+    dest_path: '/capital'
+    welcome_msg: 'this is mr banala from earth to mars'
+   tasks:
+   - name: create multiple files
+     copy: dest='{{dest_path}}/{{file_create}}' content='{{welcome_msg}}'
+     #loop:
+      #- file22.txt 
+      #- file23.txt
+

@@ -1,0 +1,8 @@
+---
+# tasks file for dev-role
+- name: install httpd
+  package: name=httpd state=installed
+- include: delete.yml
+- include: restart-httpd.yml 
+- include: copy.yml
+- include: restart-httpd.yml

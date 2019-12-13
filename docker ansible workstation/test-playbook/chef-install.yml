@@ -1,0 +1,12 @@
+---
+ - hosts: 3.89.68.152
+   user: root
+   tasks:
+   #- name: download wget
+    # package: name=wget state=installed
+   #- name: download chefdk 
+    # chdir: /media 
+     #command: wget https://packages.chef.io/files/stable/chefdk/4.5.0/el/8/chefdk-4.5.0-1.el7.x86_64.rpm
+   - name: install chefdk
+     chdir: /root  
+     command: rpm -ivh chefdk-4.5.0-1.el7.x86_64.rpm 

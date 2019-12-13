@@ -1,0 +1,14 @@
+---
+ - hosts: 52.90.107.16
+   user: root
+   tasks:
+   - name: tomcat install^n by git repo
+
+     git:
+      repo: https://github.com/banalanidish/tomcat-install.git
+      dest: /media
+    # shell:
+     # chdir: /media
+      #cmd: tar -xzvf  apache-tomcat-8.5.47.tar.gz
+
+

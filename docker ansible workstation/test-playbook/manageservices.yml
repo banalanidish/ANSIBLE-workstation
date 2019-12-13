@@ -1,0 +1,16 @@
+
+#WRITE PROG MANAGE SERVICES USING "with_items" CONCEPT
+#====================================================================
+#===========================================================================
+
+
+---
+ - hosts: 174.129.99.1
+   user: root
+   tasks:
+   - name: manage services
+     service: name="{{ item }}" state=restarted
+     with_items:
+      - 'httpd'
+      - 'vsftpd'
+#=================================================================================

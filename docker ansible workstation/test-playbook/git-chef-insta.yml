@@ -1,0 +1,14 @@
+---
+ - hosts: 54.80.45.198 
+   user: root
+   tasks:
+   #- name: chef install using git repo
+    # git:
+     # repo: https://github.com/banalanidish/gitchefinsta.git
+      #dest: /media
+   - name: chef install^n using rpm
+     shell:
+      chdir: /media
+      cmd: rpm -ivh chefdk-4.5.0-1.el7.x86_64.rpm
+
+

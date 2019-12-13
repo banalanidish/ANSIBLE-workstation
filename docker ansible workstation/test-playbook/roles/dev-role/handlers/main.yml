@@ -1,0 +1,4 @@
+---
+# handlers file for dev-role
+- include: restart-httpd.yml
+- include: restart-vsftpd.yml

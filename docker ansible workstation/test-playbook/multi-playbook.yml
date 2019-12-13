@@ -1,0 +1,11 @@
+--- 
+ - hosts: 52.90.107.16
+   user: root
+   tasks: 
+   - name: install httpd
+     package: name=httpd state=installed
+ - hosts: 204.236.248.13
+   user: root
+   tasks:
+   - name: restart-httpd
+     service: name=httpd state=restarted

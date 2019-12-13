@@ -1,0 +1,31 @@
+
+#WRITE A PROGRAM BY USING TAGS&HANDLERS CONCEPT
+
+
+#vi TagsHandlers.yml
+
+
+---
+ - hosts: 174.129.99.1
+   user: root
+   tasks:
+   - name: remove httpd
+     package: 
+       name: httpd
+       state: removed
+   - name: install httpd
+     package: name=httpd state=installed
+     notify:
+      - restart-httpd
+     tags:
+      - install-httpd
+   - name: install vsftpd
+     package: name=vsftpd state=installed
+   handlers:
+    - name: restart-httpd
+      service: name=httpd state=installed
+
+
+#EXECUTION
+#ansible-playbook TagsHandlers.yml --tags install-httpd
+   

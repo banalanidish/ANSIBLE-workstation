@@ -1,0 +1,5 @@
+---
+- hosts: localhost
+  user: root
+  roles:
+   - ec2-role 

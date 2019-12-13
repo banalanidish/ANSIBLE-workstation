@@ -1,0 +1,7 @@
+---
+# vars file for test-role
+install_package:
+  - git
+  - subversion
+  - httpd
+  - git

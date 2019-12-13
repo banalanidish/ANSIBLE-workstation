@@ -1,0 +1,14 @@
+---
+ - hosts: dev
+   user: root
+   vars:
+    packages:
+      - httpd
+      - vsftpd
+      - git
+      - subversion
+   tasks:
+   - name: ensure a list of all packages installed
+     package: name="{{packages}}" state=installed
+
+

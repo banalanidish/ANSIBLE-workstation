@@ -1,0 +1,8 @@
+---
+ - hosts: 54.237.249.231
+   user: root
+   tasks:
+   - name: create info.txt
+     file:
+      path: /capital/info1
+      state: absent

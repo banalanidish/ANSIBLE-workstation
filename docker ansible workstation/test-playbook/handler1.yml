@@ -1,0 +1,44 @@
+---
+ - hosts: 174.129.99.1
+   user: root
+   tasks:
+   - name: remove httpd
+     package:
+      name: httpd
+      state: removed
+   - name: install httpd
+     package:
+      name: httpd
+      state: installed
+   #  notify:
+    #  - restart-httpd
+     # - restart-vsftpd
+ - hosts: 54.166.170.225
+   user: root
+   tasks:
+   - name: remove index.html
+     file:
+      path: /var/www/html/index.html
+      state: absent
+   - name: deploy-index.html
+     copy:
+      src: /etc/ansible/test-playbook/files/index.html
+      dest: /var/www/html/index.html
+     notify:
+      - restart-httpd
+   handlers:
+   - name: restart-httpd
+     service:
+      name: httpd
+      state: restarted
+   - name: restart-vsftpd
+     service:
+      name: vsftpd
+      state: restarted
+     notify:
+      - restart-httpd
+    
+
+
+
+      

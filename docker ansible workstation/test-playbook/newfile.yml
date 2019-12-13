@@ -1,0 +1,13 @@
+---
+ - hosts: 54.226.142.52
+   user: root
+   tasks:
+   - name: create multiple files
+      dest: "{{ item }}"
+      content: 'it is sample file'
+      with_items:
+       - Test1.txt
+       - Test2.txt
+       - Test3.txt
+~
+

@@ -1,0 +1,14 @@
+---
+ - hosts: dev
+   user: root
+   tasks:
+   - name: install httpd
+     yum: name=httpd state=installed
+   - name: restart httpd
+     service: name=httpd state=restarted
+   - name: start vsftpd 
+     service: name=vsftpd state=restarted
+   - name: install vsftpd
+     package: name=vsftpd state=installed 
+  # - name: install httpd
+   #  package: name=httpd state=installed

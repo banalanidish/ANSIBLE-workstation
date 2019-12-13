@@ -1,0 +1,5 @@
+---
+ - hosts: 3.85.11.23
+   user: root
+   roles:
+    - test-role

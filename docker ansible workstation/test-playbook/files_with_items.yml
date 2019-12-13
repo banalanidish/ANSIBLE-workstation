@@ -1,0 +1,17 @@
+---
+ - hosts: 174.129.99.1
+   user: root
+   tasks:
+   - name: create tcis-testgroup 
+     group: name=tcis-testgroup gid=447
+   - name: create 3 users
+     user:
+       name: "{{ item.name}}"
+       group: "{{ item.group }}"
+  #     uid: "{{ item.uid }}"
+       password: "{{ item.password }}"
+     with_items:
+      - {name: 'user4',  group: '447', password: 'nidi'}
+      - {name: 'user5',  group: '447', password: 'nidi'}
+      - {name: 'user6',  group: '447', password: 'nidi'}
+

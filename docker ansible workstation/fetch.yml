@@ -1,0 +1,7 @@
+---
+ - hosts: 54.226.142.52
+   user: root
+   tasks:
+   - name: fetch file3
+     fetch: src=/capital/file3 dest=/test/file3
+

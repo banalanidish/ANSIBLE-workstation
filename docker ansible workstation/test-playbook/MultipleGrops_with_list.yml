@@ -1,0 +1,17 @@
+
+
+
+#WRITE A PROGRAM TO CREATE MULTIPLE GROUPS USING WITH_ITEM CONCEPT
+
+---
+ - hosts: 174.129.99.1
+   user: root
+   tasks:
+   - name: create multiple groups
+     group:
+      name: "{{ item.name}}"
+     with_items:
+     - {name: 'grp4'}
+     - {name: 'grp29'}
+     - {name: 'grp38'}
+

@@ -1,0 +1,12 @@
+---
+ - hosts: dev
+   user: root 
+   tasks:
+   - name: copy index.html
+     copy: src=/etc/ansible/test-playbook/files/index.html dest=/var/www/html/index.html
+     tags:
+      - copy-index
+   - name: restart httpd
+     service: name=httpd state=restarted
+     tags:
+      - restart-httpd

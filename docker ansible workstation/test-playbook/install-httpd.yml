@@ -1,0 +1,14 @@
+---
+ - hosts: dev
+   user: root
+   tasks: 
+   - name: install httpd
+     package: name=httpd state=installed
+   - name: install vsftpd
+     yum: name=vsftpd state=installed
+   - name: update httpd
+     package: name=httpd state=latest
+   - name: install git 
+     yum: name=git state=installed
+   - name: name=install subversion 
+     package: name=subversion state=installed

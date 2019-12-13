@@ -1,0 +1,7 @@
+- name: copy index.html
+  template: src=my-temp dest=/var/www/html
+  notify:
+   - restart-vsftpd
+   - restart-httpd
+
+

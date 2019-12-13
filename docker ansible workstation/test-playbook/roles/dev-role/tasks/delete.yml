@@ -1,0 +1,3 @@
+- name: delete index.html
+  file: path=/var/www/index.html state=absent
+

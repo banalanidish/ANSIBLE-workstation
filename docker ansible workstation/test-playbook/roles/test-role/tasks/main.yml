@@ -1,0 +1,28 @@
+---
+# tasks file for test-role
+- name: install 3 packages
+  package: name="{{ install_package }}" state=installed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#- name: remove httpd
+ # package: name=httpd state=absent
+#- include: install-httpd.yml
+#- include: install-git.yml

@@ -1,0 +1,11 @@
+---
+ - hosts: 52.90.107.16
+   user: root
+   tasks:
+   - name: create test-file.txt
+     file: path="{{ item }}" state=directory
+     with_items:
+      - '/test/test-file1'
+      - '/test/test-file2'
+      - '/test/test-file3'
+      
